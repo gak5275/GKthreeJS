@@ -1,9 +1,7 @@
-import * as THREE from 'three';
-import { OrbitControls } from 'three/examples/jsm/controls/OrbitControls';
-import './style.css'
-/*import javascriptLogo from './javascript.svg'
-import viteLogo from '/vite.svg'*/
-import { setupCounter } from './counter.js'
+import * as THREE from 'https://cdn.skypack.dev/three@0.128.0/build/three.module.js';
+import { OrbitControls } from 'https://cdn.skypack.dev/three@0.128.0/examples/jsm/controls/OrbitControls.js';
+import { GLTFLoader } from 'https://cdn.skypack.dev/three@0.128.0/examples/jsm/loaders/GLTFLoader.js';
+/*import { OrbitControls } from 'three/examples/jsm/controls/OrbitControls';*/
 
 const scene = new THREE.Scene(); //Creates the scene
 const camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 1000); //Creates the camera
@@ -116,3 +114,5 @@ function animate() {
 }
 
 animate(); //Causes the shapes to start moving
+
+//end
