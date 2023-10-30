@@ -114,5 +114,3 @@ function animate() {
 }
 
 animate(); //Causes the shapes to start moving
-
-//end
