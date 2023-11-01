@@ -8,7 +8,7 @@ const camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerH
 // create a new renderer by instating the canvas element in our HTML // file
 const renderer = new THREE.WebGLRenderer({
     canvas: document.querySelector('#bg'),
-}); //Creates the renderer
+}); //Creates the renderer graydon
 const geometry = new THREE.BoxGeometry(10, 10, 10); //Establishes the geometry
 //set the color of the basic material in the object parameters `{}`
 const material = new THREE.MeshStandardMaterial( { color: 0xFF6347 } ); //Defines the material
