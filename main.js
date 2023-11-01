@@ -54,7 +54,7 @@ camera.position.setZ(50);
 camera.position.setX(-3);
 
 //Cube position
-cube.position.z = -15;
+cube.position.z = -20;
 cube.position.x = -15;
 cube.rotation.x = 2;
 cube.rotation.y = .5;
