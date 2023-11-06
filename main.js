@@ -9,41 +9,48 @@ const camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerH
 const renderer = new THREE.WebGLRenderer({
     canvas: document.querySelector('#bg'),
 }); //Creates the renderer
+
 const geometry = new THREE.BoxGeometry(10, 10, 10); //Establishes the geometry
 //set the color of the basic material in the object parameters `{}`
 const material = new THREE.MeshStandardMaterial( { color: 0xFF6347 } ); //Defines the material
 const cube = new THREE.Mesh( geometry, material ); //Creates the cube
+
 const ico = new THREE.IcosahedronGeometry(10); //Creates the icosahedron
 const icoMaterial = new THREE.MeshPhongMaterial({ color: 0x00ff00 }); //Defines the material of the icosahedron
 const icoMesh = new THREE.Mesh(ico, icoMaterial); //Creates the mesh of the icosahedron
+
 // Lights
 const pointLight = new THREE.PointLight(0xffffff, 20); //Creates the primary light
 const ambientLight = new THREE.AmbientLight(0xffffff); //Creates the ambient light
 const directionLight = new THREE.DirectionalLight(0xffffff, 2);
 directionLight.position.z = -3;
 
-
 // Helpers
 const lightHelper = new THREE.PointLightHelper(pointLight); //Creates the light helper
 const gridHelper = new THREE.GridHelper(200,50); //Creates the grid helper
+
 // Orbit Control
 const controls = new OrbitControls(camera, renderer.domElement) //Establishes the orbit controls
+
 // Background
 const spaceTexture = new THREE.TextureLoader().load('images/night_sky.jpg') //Creates and defines a texture
+
 // Object texture mapping
 const smileTexture = new THREE.TextureLoader().load('images/smile.jpg') //Creates and defines a texture
-// Object texture mapping
 const sphereGeometry = new THREE.SphereGeometry( 10, 22, 10 ); //Establishes the geometry of the sphere
 const smileMaterial = new THREE.MeshStandardMaterial({map: smileTexture}) //Defines the material of the sphere
 const smileMesh = new THREE.Mesh(sphereGeometry, smileMaterial); //Defines the mesh of the sphere
 const normalTexture = new THREE.TextureLoader().load('images/normals/textureNormal.png'); //Creates and establishes the normal texture
+
 // Normal Texture Map
 const torusGeo = new THREE.TorusKnotGeometry( 5, 1, 250, 5, 9, 15 ); //Creates the torus knot
 const torusMaterial = new THREE.MeshStandardMaterial( {
     normalMap: normalTexture,
     roughness: 0,
     metalness: .8
-} ); //Defines the material of the torus knot
+} );
+
+//Defines the material of the torus knot
 const torusKnot = new THREE.Mesh( torusGeo, torusMaterial ); //Creates the mesh for the torus knot
 
 //Render and camera settings
